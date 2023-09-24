@@ -92,7 +92,7 @@ script.onload = function(){
 			.replace(/(-\d{4})\d+?$/, '$1');
 		}
 
-		$( "#notifyhub-form-handler" ).on( "submit", function( event ) {
+		$( "#notifyhub-form-handler" ).on( "submit", async function( event ) {
 			event.preventDefault();
 
 			const errorText = $('#error_text_form');
@@ -142,14 +142,12 @@ script.onload = function(){
 				utmParams: _utmUrl.val()	
 			}
 
-			console.log(data)
+			var whatsappUrl;
+			const response = await axios.post('http://localhost:5000/leads', data);
 
-			axios.post('http://localhost:5000/leads', data).then((response) => {
-				console.log(response)
-				location.href = `https://api.whatsapp.com/send/?phone=${response.data.whatsapp.phone.replace(/\D/g, "")}&text=${response.data.whatsapp.message}&type=phone_number&app_absent=0`;
-			}).catch((error) => {
-				console.log(error)
-			})
+			whatsappUrl = `https://api.whatsapp.com/send/?phone=${response.data.whatsapp.phone.replace(/\D/g, "")}&text=${response.data.whatsapp.message}&type=phone_number&app_absent=0`;
+
+			return location.href = whatsappUrl;
 
 		});
 
