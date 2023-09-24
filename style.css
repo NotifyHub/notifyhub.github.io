@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=checkbox],[type=radio],legend{box-sizing:border-box;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}details,main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{padding:.35em .75em .625em}legend{color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+.whatsapp-form-notifyhub > * {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.whatsapp-form-notifyhub {
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	z-index: 9999999999;
+	max-width: 342px;
+	width: 100%;
+	display: block;
+}
+
+.whatsapp-form-notifyhub .whatsatpp-box_notifyhub {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	opacity: 0;
+	visibility: hidden;
+	transition: .3s;
+	z-index: -9999;
+	position: relative;
+}
+
+.whatsapp-form-notifyhub .whatsatpp-box_notifyhub.show {
+	opacity: 1;
+	visibility: visible;
+	z-index: 9999;
+}
+
+.whatsapp-form-notifyhub .header-notifyhub {
+	border-radius: 12px 12px 0px 0px;
+	background: #198B69;
+	width: 342px;
+	height: 58px;
+	display: flex;
+	align-items: center;
+	padding-left: 1.4em;
+}
+
+.whatsapp-form-notifyhub .header-notifyhub .title {
+	color: #FFF;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub {
+	border-radius: 0px 0px 6px 6px;
+	background: #F0F0F0;
+	width: 100%;
+	padding: 1em 1.4em 1.8em;
+	position: relative;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub:after {
+	content: "";
+	width: 28.182px;
+	height: 27.475px;
+	transform: rotate(-45deg);
+	border-radius: 3px;
+	background: #F0F0F0;
+	display: block;
+	position: absolute;
+	bottom: -13px;
+	right: 24px;
+}
+
+
+.whatsapp-form-notifyhub .body-notifyhub .text-body-notifyhub {
+	padding-bottom: 1.8em;
+}
+
+
+.whatsapp-form-notifyhub .body-notifyhub .text-body-notifyhub p {
+	color: #434343;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub #error_text_form {
+	font-size: 14px;
+	width: 100%;
+	display: flex;
+	padding: 0.5em 0.7em 0;
+	color: #f00;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub form {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub form .wrapper-field-nh {
+
+	flex: none;
+	width: 82%;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub form .wrapper-field-nh input {
+	display: none;
+	border-radius: 90px;
+	border: 1px solid #DCDCDC;
+	background: #FFF;
+	height: 48px;
+	width: 100%;
+	padding-left: 1.2em;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	max-width: 222px;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub form .wrapper-field-nh input.show {
+	display: flex;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub form .wrapper-field-nh input:focus {
+	outline: 0;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub .warn-policies {
+	display: none;
+	align-items: flex-start;
+	padding-right: 1.4em;
+	margin-right: 0.4em;
+	margin-top: 1em;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub .warn-policies.show {
+	display: flex;
+}
+
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub .warn-policies img {
+	flex: none;
+	width: 13px;
+	height: 13px;
+	margin-right: 0.5em;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub .warn-policies p {
+	color: #434343;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub .warn-policies p a {
+	font-weight: 600;
+	text-decoration: underline;
+	color: #434343;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub .btn-fom-nh {
+	width: 47px;
+	height: 47px;
+	border-radius: 900px;
+	overflow: hidden;
+	padding: 0;
+	border: none;
+	background: none;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub .btn-fom-nh img {
+	width: 100%;
+	height: auto;
+}
+
+.whatsapp-form-notifyhub .body-notifyhub .form-notifyhub {
+
+}
+
+.whatsapp-form-notifyhub .button-whatsapp {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 1.8em;
+}
+
+.whatsapp-form-notifyhub .button-whatsapp .btn-whatsapp-notifyhub {
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	width: 80px;
+	height: 80px;
+	display: flex;
+}
+
+.whatsapp-form-notifyhub .button-whatsapp .btn-whatsapp-notifyhub img {
+	width: 100%;
+	height: auto;
+}
