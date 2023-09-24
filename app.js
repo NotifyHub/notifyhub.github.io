@@ -32,7 +32,9 @@ script.onload = function(){
 
 			<div class="form-notifyhub">
 			<form id="notifyhub-form-handler">
-			<input type="hidden" id="url_paramns_nh_get_utm">
+			<div id="form_hidden_fields_notifyhub">
+				<input type="hidden" id="url_paramns_nh_get_utm">
+			</div>
 
 			<div class="wrapper-field-nh">
 			<input type="text" class="show" id="name_notifyhub" placeholder="Seu nome">
