@@ -19,7 +19,7 @@ script.onload = function(){
 	jQuery(document).ready(function($) {
 		const formElement = $(
 			`
-			<div class="whatsapp-form-notifyhub">
+			<div class="whatsapp-form-notifyhub" style="display: none;">
 			<div class="whatsatpp-box_notifyhub">
 			<div class="header-notifyhub">
 			<span class="title">Fale agora pelo Whatsapp</span>
@@ -69,6 +69,13 @@ script.onload = function(){
 			`)
 
 		$('body').append(formElement);
+
+		$(window).on('load', function() {
+			setTimeout(() => {
+				$('.whatsapp-form-notifyhub').fadeIn('slow/400/fast');
+			}, 1000)
+		});
+
 
 		$("#btnWhatsappNotifyHub").on('click', function() {
 			$('.whatsatpp-box_notifyhub').toggleClass('show');

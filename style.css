@@ -14,7 +14,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 	z-index: 9999999999;
 	max-width: 342px;
 	width: 100%;
-	display: block;
+	transition: .2s;
 }
 
 .whatsapp-form-notifyhub .whatsatpp-box_notifyhub {
