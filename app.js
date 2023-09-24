@@ -33,7 +33,7 @@ script.onload = function(){
 			<div class="form-notifyhub">
 			<form id="notifyhub-form-handler">
 			<div id="form_hidden_fields_notifyhub">
-				<input type="hidden" id="url_paramns_nh_get_utm">
+			<input type="hidden" id="url_paramns_nh_get_utm">
 			</div>
 
 			<div class="wrapper-field-nh">
@@ -105,9 +105,6 @@ script.onload = function(){
 			const phoneInput = $("#phone_notifyhub");
 			const warnPolicies = $(".form-notifyhub .warn-policies");
 
-			const _uoid = $("#u_notifyhub_lead").val();
-			const _doid = $("#d_notifyhub_l_domain").val();
-
 			if(nameInput.val().trim().length <= 0){
 				return errorText.text('Nome é obrigatório');
 			} else if (specialChars.test(nameInput.val())){
@@ -131,6 +128,9 @@ script.onload = function(){
 				return errorText.text('Telefone deve ser 11 números com dígito 9.');
 			}
 
+			const _uoid = $("#u_notifyhub_lead").val();
+			const _doid = $("#d_notifyhub_l_domain").val();
+
 			errorText.text('');
 
 			const data = {
@@ -139,18 +139,17 @@ script.onload = function(){
 				phone: phoneInput.val(),
 				userId: _uoid,
 				domainId: _doid,
-				utmParams: _utmUrl.val()
+				utmParams: _utmUrl.val()	
 			}
 
 			console.log(data)
 
 			axios.post('http://localhost:5000/leads', data).then((response) => {
 				console.log(response)
+				location.href = `https://api.whatsapp.com/send/?phone=${response.data.whatsapp.phone.replace(/\D/g, "")}&text=${response.data.whatsapp.message}&type=phone_number&app_absent=0`;
 			}).catch((error) => {
 				console.log(error)
 			})
-
-			return;
 
 		});
 
