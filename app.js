@@ -142,6 +142,8 @@ script.onload = function(){
 				utmParams: _utmUrl.val()
 			}
 
+			console.log(data)
+
 			axios.post('http://localhost:5000/leads', data).then((response) => {
 				console.log(response)
 			}).catch((error) => {
