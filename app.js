@@ -3,9 +3,15 @@ document.head.appendChild(script);
 script.type = 'text/javascript';
 script.src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js";
 
- 
-script.onload = function(){
+const style = document.createElement('link');
+document.head.appendChild(style);
+style.rel = 'stylesheet';
+style.href = 'https://notifyhub.github.io/style.css';
+style.type = 'text/css';
 
+
+script.onload = function(){
+	
 	const axiosLoad = document.createElement('script');
 	document.head.appendChild(axiosLoad);
 	axiosLoad.src = 'https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js';
@@ -14,50 +20,50 @@ script.onload = function(){
 		const formElement = $(
 			`
 			<div class="whatsapp-form-notifyhub">
-					<div class="whatsatpp-box_notifyhub">
-						<div class="header-notifyhub">
-							<span class="title">Fale agora pelo Whatsapp</span>
-						</div>
+			<div class="whatsatpp-box_notifyhub">
+			<div class="header-notifyhub">
+			<span class="title">Fale agora pelo Whatsapp</span>
+			</div>
 
-						<div class="body-notifyhub">
-							<div class="text-body-notifyhub">
-								<p>Insira as informações para iniciar uma conversa</p>
-							</div>
+			<div class="body-notifyhub">
+			<div class="text-body-notifyhub">
+			<p>Insira as informações para iniciar uma conversa</p>
+			</div>
 
-							<div class="form-notifyhub">
-								<form id="notifyhub-form-handler">
-									<input type="hidden" id="url_paramns_nh_get_utm">
+			<div class="form-notifyhub">
+			<form id="notifyhub-form-handler">
+			<input type="hidden" id="url_paramns_nh_get_utm">
 
-									<div class="wrapper-field-nh">
-										<input type="text" class="show" id="name_notifyhub" placeholder="Seu nome">
-										<input type="text" id="email_notifyhub" placeholder="Seu email">
-										<input type="text" id="phone_notifyhub" data-js="phoneInput" placeholder="Seu telefone (opcional)">
-									</div>					
+			<div class="wrapper-field-nh">
+			<input type="text" class="show" id="name_notifyhub" placeholder="Seu nome">
+			<input type="text" id="email_notifyhub" placeholder="Seu email">
+			<input type="text" id="phone_notifyhub" data-js="phoneInput" placeholder="Seu telefone (opcional)">
+			</div>					
 
-									<button class="btn-fom-nh" id="btn_send_nh_form">
-										<img src="img/button-whatsapp-notifyhub.png" alt="">
-									</button>
-								</form>
+			<button class="btn-fom-nh" id="btn_send_nh_form">
+			<img src="img/button-whatsapp-notifyhub.png" alt="">
+			</button>
+			</form>
 
-								<span id="error_text_form"></span>
+			<span id="error_text_form"></span>
 
-								<div class="warn-policies">
-									<img src="img/info-notifyhub.png" alt="NotifuHub | Termos e Políticas">
-									<p>Ao clicar em enviar você concorda com nossos <a href="">termos e política de privacidade.</a> </p>
-								</div>	
+			<div class="warn-policies">
+			<img src="img/info-notifyhub.png" alt="NotifuHub | Termos e Políticas">
+			<p>Ao clicar em enviar você concorda com nossos <a href="">termos e política de privacidade.</a> </p>
+			</div>	
 
-							</div>
+			</div>
 
-						</div>
+			</div>
 
-					</div>
+			</div>
 
-					<div class="button-whatsapp">
-						<button class="btn-whatsapp-notifyhub" id="btnWhatsappNotifyHub">
-							<img src="img/notifyhub.-whatsapp-icon.png" alt="">
-						</button>
-					</div>
-				</div>
+			<div class="button-whatsapp">
+			<button class="btn-whatsapp-notifyhub" id="btnWhatsappNotifyHub">
+			<img src="img/notifyhub.-whatsapp-icon.png" alt="">
+			</button>
+			</div>
+			</div>
 			`)
 
 		$('body').append(formElement);
