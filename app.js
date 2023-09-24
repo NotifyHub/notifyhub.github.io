@@ -39,7 +39,7 @@ script.onload = function(){
 			<div class="wrapper-field-nh">
 			<input type="text" class="show" id="name_notifyhub" placeholder="Seu nome">
 			<input type="text" id="email_notifyhub" placeholder="Seu email">
-			<input type="text" id="phone_notifyhub" data-js="phoneInput" placeholder="Seu telefone (opcional)">
+			<input type="text" id="phone_notifyhub" data-js="phoneInput" placeholder="Seu telefone">
 			</div>					
 
 			<button class="btn-fom-nh" id="btn_send_nh_form">
