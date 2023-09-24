@@ -41,14 +41,14 @@ script.onload = function(){
 			</div>					
 
 			<button class="btn-fom-nh" id="btn_send_nh_form">
-			<img src="img/button-whatsapp-notifyhub.png" alt="">
+			<img src="https://notifyhub.github.io/img/button-whatsapp-notifyhub.png" alt="">
 			</button>
 			</form>
 
 			<span id="error_text_form"></span>
 
 			<div class="warn-policies">
-			<img src="img/info-notifyhub.png" alt="NotifuHub | Termos e Políticas">
+			<img src="https://notifyhub.github.io/img/info-notifyhub.png" alt="NotifuHub | Termos e Políticas">
 			<p>Ao clicar em enviar você concorda com nossos <a href="">termos e política de privacidade.</a> </p>
 			</div>	
 
@@ -60,7 +60,7 @@ script.onload = function(){
 
 			<div class="button-whatsapp">
 			<button class="btn-whatsapp-notifyhub" id="btnWhatsappNotifyHub">
-			<img src="img/notifyhub.-whatsapp-icon.png" alt="">
+			<img src="https://notifyhub.github.io/img/notifyhub.-whatsapp-icon.png" alt="">
 			</button>
 			</div>
 			</div>
