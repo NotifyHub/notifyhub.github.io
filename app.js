@@ -161,7 +161,7 @@ script.onload = function(){
 			}
 
 			var whatsappUrl;
-			const response = await axios.post('http://localhost:5000/leads', data).catch();
+			const response = await axios.post('http://localhost:5000/leads', data);
 
 			if(response && response.data.whatsapp){
 				whatsappUrl = `https://api.whatsapp.com/send/?phone=${response.data.whatsapp.phone.replace(/\D/g, "")}&text=${response.data.whatsapp.message}&type=phone_number&app_absent=0`;
