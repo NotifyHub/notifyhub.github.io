@@ -48,6 +48,9 @@ script.onload = function(){
 			</form>
 
 			<span id="error_text_form"></span>
+			<span id="loading_notifyhub_end_send">
+			<img src="img/loading-notifyhub.gif" alt="">
+			</span>
 
 			<div class="warn-policies">
 			<img src="https://notifyhub.github.io/img/info-notifyhub.png" alt="NotifuHub | Termos e Políticas">
@@ -138,7 +141,15 @@ script.onload = function(){
 			const _uoid = $("#u_notifyhub_lead").val();
 			const _doid = $("#d_notifyhub_l_domain").val();
 
-			errorText.text('');
+			const h = $('.body-notifyhub .text-body-notifyhub p');
+			const f = $('.form-notifyhub form#notifyhub-form-handler');
+			const l = $('#loading_notifyhub_end_send');
+
+			h.text('Iniciando Conversa...')
+			h.addClass('loading');
+			f.fadeOut('slow/400/fast');
+			l.css({ display: 'block' });
+			errorText.css({ display: 'none' });
 
 			const data = {
 				name: nameInput.val(),
@@ -154,7 +165,15 @@ script.onload = function(){
 
 			whatsappUrl = `https://api.whatsapp.com/send/?phone=${response.data.whatsapp.phone.replace(/\D/g, "")}&text=${response.data.whatsapp.message}&type=phone_number&app_absent=0`;
 
-			return location.href = whatsappUrl;
+			if(response.data.whatsapp){
+				return location.href = whatsappUrl;
+			} else {
+				h.text('Insira as informações para iniciar uma conversa')
+				h.removeClass('loading');
+				f.fadeIn('slow/400/fast');
+				l.css({ display: 'none' });
+				errorText.css({ display: 'block' });
+			}
 
 		});
 
