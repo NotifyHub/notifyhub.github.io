@@ -161,7 +161,7 @@ script.onload = function(){
 			}
 
 			var whatsappUrl;
-			const response = await axios.post('http://localhost:5000/leads', data).catch((error));
+			const response = await axios.post('http://localhost:5000/leads', data).catch();
 
 			console.log(response)
 
