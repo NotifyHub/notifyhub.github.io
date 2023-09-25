@@ -163,7 +163,11 @@ script.onload = function(){
 			var whatsappUrl;
 			const response = await axios.post('http://localhost:5000/leads', data).catch();
 
-			if(response.name == "AxiosError"){
+			if(response && response.data.whatsapp){
+				whatsappUrl = `https://api.whatsapp.com/send/?phone=${response.data.whatsapp.phone.replace(/\D/g, "")}&text=${response.data.whatsapp.message}&type=phone_number&app_absent=0`;
+
+				return location.href = whatsappUrl;
+			} else {
 				h.text('Insira as informações para iniciar uma conversa')
 				h.removeClass('loading');
 				f.fadeIn('slow/400/fast');
@@ -172,9 +176,6 @@ script.onload = function(){
 				return;
 			}
 
-			whatsappUrl = `https://api.whatsapp.com/send/?phone=${response.data.whatsapp.phone.replace(/\D/g, "")}&text=${response.data.whatsapp.message}&type=phone_number&app_absent=0`;
-
-			return location.href = whatsappUrl;
 		});
 
 	});
