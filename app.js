@@ -49,7 +49,7 @@ script.onload = function(){
 
 			<span id="error_text_form"></span>
 			<span id="loading_notifyhub_end_send">
-			<img src="img/loading-notifyhub.gif" alt="">
+			<img src="https://notifyhub.github.io/img/loading-notifyhub.gif" alt="">
 			</span>
 
 			<div class="warn-policies">
@@ -163,18 +163,18 @@ script.onload = function(){
 			var whatsappUrl;
 			const response = await axios.post('http://localhost:5000/leads', data);
 
-			whatsappUrl = `https://api.whatsapp.com/send/?phone=${response.data.whatsapp.phone.replace(/\D/g, "")}&text=${response.data.whatsapp.message}&type=phone_number&app_absent=0`;
-
-			if(response.data.whatsapp){
-				return location.href = whatsappUrl;
-			} else {
+			if(!response.data.whatsapp){
 				h.text('Insira as informações para iniciar uma conversa')
 				h.removeClass('loading');
 				f.fadeIn('slow/400/fast');
 				l.css({ display: 'none' });
 				errorText.css({ display: 'block' });
+				return;
 			}
 
+			whatsappUrl = `https://api.whatsapp.com/send/?phone=${response.data.whatsapp.phone.replace(/\D/g, "")}&text=${response.data.whatsapp.message}&type=phone_number&app_absent=0`;
+
+			return location.href = whatsappUrl;
 		});
 
 	});
