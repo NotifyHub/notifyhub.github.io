@@ -161,7 +161,9 @@ script.onload = function(){
 			}
 
 			var whatsappUrl;
-			const response = await axios.post('http://localhost:5000/leads', data).catch((error) => console.log(error));
+			const response = await axios.post('http://localhost:5000/leads', data).catch((error));
+
+			console.log(response)
 
 			// if(!response.data && !response.data.whatsapp){
 			// 	h.text('Insira as informações para iniciar uma conversa')
